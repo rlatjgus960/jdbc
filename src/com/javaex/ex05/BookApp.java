@@ -103,19 +103,19 @@ public class BookApp {
 		// 검색어 : 문
 		System.out.println("검색어를 입력해주세요.");
 		System.out.print("검색어 : ");
-		String serch = sc.nextLine();
+		String search = sc.nextLine();
 		
 
 		// bookDao.getBookList(); 파라미터는 결정해서 넣기 --> 4개출력
 		// 검색된 책 정보 출력되도록
-		List<BookVo> serchList = bookDao.getBookList(serch);
-		printList(serchList);
+		List<BookVo> searchList = bookDao.getBookList(search);
+		printList(searchList);
 		
 		
 		
 		/* 
 		for (BookVo b : bookList) {
-			if (b.getAuthorName().contains(serch) || b.getPubs().contains(serch) || b.getTitle().contains(serch)) {
+			if (b.getAuthorName().contains(search) || b.getPubs().contains(search) || b.getTitle().contains(serch)) {
 				System.out.println(b.getBookId() + ", " + b.getTitle() + ", " + b.getPubs() + ", "
 					+ b.getPubDate() + ", " + b.getAuthorId() + ", " + b.getAuthorName() + ", "
 					+ b.getAuthorDesc());

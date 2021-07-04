@@ -314,7 +314,7 @@ public class BookDao {
 	
 	
 	//책 검색
-	public List<BookVo> getBookList(String serch) {
+	public List<BookVo> getBookList(String search) {
 		
 		//리스트 생성
 		List<BookVo> bookList = new ArrayList<BookVo>();
@@ -334,7 +334,7 @@ public class BookDao {
 	        query += "         au.author_desc ";
 		    query += " from book bo, author au ";
 		    query += " where bo.author_id = au.author_id ";
-		    query += " and (bo.title || bo.pubs || au.author_name) like " + "'%" + serch + "%' ";
+		    query += " and (bo.title || bo.pubs || au.author_name) like " + "'%" + search + "%' ";
 		    query += " order by book_id asc ";
 		    
 		    pstmt = conn.prepareStatement(query);
