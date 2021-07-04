@@ -86,7 +86,7 @@ public class BookApp {
 
 		// 책 수정, 삭제 각자 알아서 테스트.. 넣어보긴 하되~
 		/*책 수정
-		BookVo uBookVo = new BookVo("몰라", "ㅇㄹ", "2021-07-04", 3, 5);
+		BookVo uBookVo = new BookVo("몰라", "ㅁㄹ", "2021-07-04", 3, 5);
 		bookDao.bookUpdate(uBookVo);
 		*/
 		
@@ -120,13 +120,18 @@ public class BookApp {
 	
 		System.out.println("");
 		
+		List<BookVo> serchList = bookDao.getBookList(serch);
+		printList(serchList);
+		
+		/*
 		for (BookVo b : bookList) {
-			if (b.getAuthorName().contains(serch) || b.getPubs().contains(serch) || b.getTitle().contains(serch) || b.getAuthorDesc().contains(serch)) {
+			if (b.getAuthorName().contains(serch) || b.getPubs().contains(serch) || b.getTitle().contains(serch)) {
 				System.out.println(b.getBookId() + ", " + b.getTitle() + ", " + b.getPubs() + ", "
 					+ b.getPubDate() + ", " + b.getAuthorId() + ", " + b.getAuthorName() + ", "
 					+ b.getAuthorDesc());
 			}
 		}
+		*/
 		
 		sc.close();
 	}
