@@ -10,27 +10,22 @@ public class BookApp {
 		Scanner sc = new Scanner(System.in);
 
 		AuthorDao authorDao = new AuthorDao();
-		List<AuthorVo> authorList; 
+		List<AuthorVo> authorList; //얘 안쓰이는거같은데 꼭 써야하나!
 
 		BookDao bookDao = new BookDao();
-		List<BookVo> bookList; // 데이터 계속 가져와야돼서 처음에 선언부터 해줌
+		List<BookVo> bookList; 
 
 		// (1)
-		// 작가테이블 책테이블 완성
-		// 작가테이블 시퀀스, 책테이블 시퀀스 완성
+		// 작가테이블 책테이블 생성
+		// 작가테이블 시퀀스, 책테이블 시퀀스 생성
 		authorDao.authorTable();
 		authorDao.authorSeq();
 
 		bookDao.bookTable();
 		bookDao.bookSeq();
 
-		// 스토리시작
-		// authorDao.authorInsert(); 이용해서 작가 데이터 추가 (표에 있는 작가 몇명인지 파악해서 넣기), 작가등록같이
-		// 여섯번실행..
-
 		
-
-		// 작가등록
+		// authorDao.authorInsert(); 이용해서 작가 6명 데이터 추가
 		AuthorVo AuthorVo1 = new AuthorVo("이문열", "경북 영양");
 		authorDao.authorInsert(AuthorVo1);
 
@@ -84,7 +79,7 @@ public class BookApp {
 		BookVo bookVo8 = new BookVo("26년", "재미주의", "2012-02-04", 5);
 		bookDao.bookInsert(bookVo8);
 
-		// 책 수정, 삭제 각자 알아서 테스트.. 넣어보긴 하되~
+		// 책 수정, 삭제 테스트
 		/*책 수정
 		BookVo uBookVo = new BookVo("몰라", "ㅁㄹ", "2021-07-04", 3, 5);
 		bookDao.bookUpdate(uBookVo);
@@ -97,33 +92,30 @@ public class BookApp {
 
 		// 책 리스트 출력
 		// bookDao.getBookList(); --> 결과 8개
-		////////////////////////// 여기까지가 기본(1번)
-
-		
 		bookList = bookDao.getBookList();
 		printList(bookList);
 
+
+		
 		// (2)
 		// 스캐너를 통해서 사용자한테 키워드 입력받음
 		// 검색어를 입력해주세요 (시작화면)
 		// 검색어 : 문
-
-		// bookDao.getBookList(); 파라미터는 결정해서 넣기 --> 4개출력
-		// 검색된 책 정보 출력되도록
-
-		
-		
 		System.out.println("검색어를 입력해주세요.");
 		System.out.print("검색어 : ");
 		String serch = sc.nextLine();
 		
-	
+
+		// bookDao.getBookList(); 파라미터는 결정해서 넣기 --> 4개출력
+		// 검색된 책 정보 출력되도록
 		System.out.println("");
-		
+		System.out.println("검색결과>>");
 		List<BookVo> serchList = bookDao.getBookList(serch);
 		printList(serchList);
 		
-		/*
+		
+		
+		/* 
 		for (BookVo b : bookList) {
 			if (b.getAuthorName().contains(serch) || b.getPubs().contains(serch) || b.getTitle().contains(serch)) {
 				System.out.println(b.getBookId() + ", " + b.getTitle() + ", " + b.getPubs() + ", "
