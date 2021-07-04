@@ -3,17 +3,17 @@ package com.javaex.ex05;
 import java.util.List;
 import java.util.Scanner;
 
-import com.javaex.ex01.BookUpdateApp;
-
 public class BookApp {
 
 	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
 
 		AuthorDao authorDao = new AuthorDao();
-		List<AuthorVo> authorList; // 데이터 계속 가져와야돼서 처음에 선언부터 해줌
+		List<AuthorVo> authorList; 
 
 		BookDao bookDao = new BookDao();
-		List<BookVo> bookList;
+		List<BookVo> bookList; // 데이터 계속 가져와야돼서 처음에 선언부터 해줌
 
 		// (1)
 		// 작가테이블 책테이블 완성
@@ -112,7 +112,6 @@ public class BookApp {
 		// 검색된 책 정보 출력되도록
 
 		
-		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("검색어를 입력해주세요.");
 		System.out.print("검색어 : ");
