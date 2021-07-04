@@ -119,6 +119,8 @@ public class BookApp {
 		String serch = sc.nextLine();
 		
 	
+		System.out.println("");
+		
 		for (BookVo b : bookList) {
 			if (b.getAuthorName().contains(serch) || b.getPubs().contains(serch) || b.getTitle().contains(serch) || b.getAuthorDesc().contains(serch)) {
 				System.out.println(b.getBookId() + ", " + b.getTitle() + ", " + b.getPubs() + ", "
@@ -141,6 +143,11 @@ public class BookApp {
 			System.out.println(bookVo.getBookId() + ", " + bookVo.getTitle() + ", " + bookVo.getPubs() + ", "
 					+ bookVo.getPubDate() + ", " + bookVo.getAuthorId() + ", " + bookVo.getAuthorName() + ", "
 					+ bookVo.getAuthorDesc());
+			
+			/*
+			System.out.println(bookVo.getBookId() + ", " + bookVo.getTitle() + ", " + bookVo.getPubs() + ", "
+					+ bookVo.getPubDate() + ", "  + bookVo.getAuthorName());
+			*/
 
 		}
 		System.out.println("==============================================================");
