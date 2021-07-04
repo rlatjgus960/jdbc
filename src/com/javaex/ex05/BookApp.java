@@ -108,8 +108,6 @@ public class BookApp {
 
 		// bookDao.getBookList(); 파라미터는 결정해서 넣기 --> 4개출력
 		// 검색된 책 정보 출력되도록
-		System.out.println("");
-		System.out.println("검색결과>>");
 		List<BookVo> serchList = bookDao.getBookList(serch);
 		printList(serchList);
 		
