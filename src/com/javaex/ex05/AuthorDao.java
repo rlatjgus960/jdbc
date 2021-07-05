@@ -67,6 +67,7 @@ public class AuthorDao {
 
 	}
 	
+	/*
 	//작가 테이블 생성
 	public void authorTable() {
 		
@@ -130,6 +131,7 @@ public class AuthorDao {
 		this.close();
 
 	}
+	*/
 	
 	
 	//작가 삭제하기

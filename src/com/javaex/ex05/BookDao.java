@@ -68,6 +68,8 @@ public class BookDao {
 	}
 	
 	
+	
+	/*
 	//책 테이블 생성
 	public void bookTable() {
 		
@@ -136,6 +138,8 @@ public class BookDao {
 		this.close();
 
 	}
+	*/
+		
 		
 	
 	

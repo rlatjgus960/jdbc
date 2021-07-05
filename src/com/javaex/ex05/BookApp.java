@@ -15,7 +15,11 @@ public class BookApp {
 		BookDao bookDao = new BookDao();
 		List<BookVo> bookList; 
 
+		
 		// (1)
+		
+		
+		/*
 		// 작가테이블 책테이블 생성
 		// 작가테이블 시퀀스, 책테이블 시퀀스 생성
 		authorDao.authorTable();
@@ -23,7 +27,9 @@ public class BookApp {
 
 		bookDao.bookTable();
 		bookDao.bookSeq();
-
+	
+		*/
+		
 		
 		// authorDao.authorInsert(); 이용해서 작가 6명 데이터 추가
 		AuthorVo AuthorVo1 = new AuthorVo("이문열", "경북 영양");
